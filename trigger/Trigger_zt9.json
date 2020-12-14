@@ -1,0 +1,17 @@
+{
+	"name": "Trigger_zt9",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 24,
+				"startTime": "2020-12-13T11:13:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
