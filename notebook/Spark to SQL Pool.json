@@ -59,7 +59,7 @@
 					"df = spark.sql(\"SELECT * FROM transformedTaxiData\") \r\n",
 					"display(df)"
 				],
-				"execution_count": 1
+				"execution_count": 3
 			},
 			{
 				"cell_type": "code",
@@ -90,9 +90,9 @@
 					"   ORDER BY PassengerCount\r\n",
 					"\"\"\") \r\n",
 					"display(df)\r\n",
-					"df.write.saveAsTable(\"passengercountstats\")"
+					"df.write.mode(\"overwrite\").saveAsTable(\"passengercountstats\")"
 				],
-				"execution_count": 6
+				"execution_count": 5
 			},
 			{
 				"cell_type": "code",
@@ -116,7 +116,7 @@
 					"val df = spark.sql(\"SELECT * FROM passengercountstats\")\r\n",
 					"df.write.sqlanalytics(\"SQLPOOL1.dbo.PassengerCountStats\", Constants.INTERNAL )"
 				],
-				"execution_count": 8
+				"execution_count": null
 			}
 		]
 	}
