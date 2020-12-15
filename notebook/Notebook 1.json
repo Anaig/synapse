@@ -40,8 +40,10 @@
 				"sparkVersion": "2.4",
 				"nodeCount": 10,
 				"cores": 4,
-				"memory": 28
-			}
+				"memory": 28,
+				"automaticScaleJobs": false
+			},
+			"sessionKeepAliveTimeout": 30
 		},
 		"cells": [
 			{
@@ -60,7 +62,6 @@
 					"    inferSchema=True)\r\n",
 					"display(df.limit(10))"
 				],
-				"attachments": null,
 				"execution_count": 1
 			},
 			{
@@ -80,7 +81,6 @@
 				"source": [
 					"df.printSchema()"
 				],
-				"attachments": null,
 				"execution_count": 2
 			},
 			{
@@ -94,8 +94,7 @@
 				},
 				"source": [
 					"### Apply some feature transformation"
-				],
-				"attachments": null
+				]
 			},
 			{
 				"cell_type": "code",
@@ -143,8 +142,7 @@
 					"\r\n",
 					"display(featurized_df.head(5))"
 				],
-				"attachments": null,
-				"execution_count": 4
+				"execution_count": 3
 			},
 			{
 				"cell_type": "code",
@@ -170,8 +168,7 @@
 					"\r\n",
 					"filtered_df.info()"
 				],
-				"attachments": null,
-				"execution_count": 5
+				"execution_count": 4
 			},
 			{
 				"cell_type": "code",
@@ -191,8 +188,7 @@
 					"spark_df = spark.createDataFrame(filtered_df)\r\n",
 					"spark_df.write.mode(\"overwrite\").saveAsTable(\"transformedTaxiData\")"
 				],
-				"attachments": null,
-				"execution_count": 7
+				"execution_count": 5
 			},
 			{
 				"cell_type": "code",
@@ -211,7 +207,6 @@
 				"source": [
 					""
 				],
-				"attachments": null,
 				"execution_count": null
 			}
 		]
